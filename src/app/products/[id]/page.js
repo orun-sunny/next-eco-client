@@ -4,7 +4,7 @@ import AddToCartButton from "@/components/AddToCartButton";
 
 async function getProduct(id) {
   try {
-    const res = await fetch(`http://localhost:5000/api/products/${id}`, { cache: 'no-store' });
+    const res = await fetch(`https://next-eco-server-nine.vercel.app/api/products/${id}`, { cache: 'no-store' });
     if (res.ok) {
       return res.json();
     }

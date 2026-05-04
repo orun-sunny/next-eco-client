@@ -3,7 +3,7 @@ import { Search, Filter } from "lucide-react";
 
 async function getProducts() {
   try {
-    const res = await fetch('http://localhost:5000/api/products', { cache: 'no-store' });
+    const res = await fetch('https://next-eco-server-nine.vercel.app/api/products', { cache: 'no-store' });
     if (res.ok) {
       return res.json();
     }

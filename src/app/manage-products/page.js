@@ -22,7 +22,7 @@ export default function ManageProducts() {
 
   const fetchProducts = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/products");
+      const res = await fetch("https://next-eco-server-nine.vercel.app/api/products");
       if (res.ok) {
         const data = await res.json();
         setProducts(data);
@@ -55,7 +55,7 @@ export default function ManageProducts() {
     setProducts(products.filter(p => p.id !== id));
     
     try {
-      const res = await fetch(`http://localhost:5000/api/products/${id}`, { method: "DELETE" });
+      const res = await fetch(`https://next-eco-server-nine.vercel.app/api/products/${id}`, { method: "DELETE" });
       if (!res.ok) throw new Error("Delete failed");
     } catch (err) {
       console.log("Delete error or fallback mode, reverting if real error", err);
